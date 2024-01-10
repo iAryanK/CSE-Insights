@@ -6,12 +6,12 @@ import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 const Nav = () => {
-  const {data: session} = useSession();
+  const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       const response = await getProviders();
       setProviders(response);
     })();
@@ -27,7 +27,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">CSE • Insights</p>
+        <p className="font-bold text-xl orange_gradient">CSE • Insights</p>
       </Link>
 
       {/* Desktop Navigation  */}
@@ -64,7 +64,7 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="black_btn">
-                    Sign In
+                  Sign In
                 </button>)}
           </>
         )}
@@ -75,43 +75,43 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex">
             <Image
-                src={session?.user.image}
-                alt="Profile"
-                width={37}
-                height={37}
-                className="rounded-full"
-                onClick={()=>setToggleDropdown((prev)=>!prev)}
-              />
+              src={session?.user.image}
+              alt="Profile"
+              width={37}
+              height={37}
+              className="rounded-full"
+              onClick={() => setToggleDropdown((prev) => !prev)}
+            />
 
-              {toggleDropdown && (
-                <div className="dropdown">
-                  <Link
+            {toggleDropdown && (
+              <div className="dropdown">
+                <Link
                   href='/profile'
                   className="dropdown_link"
-                  onClick={()=>setToggleDropdown(false)}>
-                    My Profile
-                  </Link>
+                  onClick={() => setToggleDropdown(false)}>
+                  My Profile
+                </Link>
 
-                  <Link
+                <Link
                   href='/create-prompt'
                   className="dropdown_link"
-                  onClick={()=>setToggleDropdown(false)}>
-                    Create Post
-                  </Link>
+                  onClick={() => setToggleDropdown(false)}>
+                  Create Post
+                </Link>
 
-                  <button
+                <button
                   type="button"
-                  onClick={()=>{
+                  onClick={() => {
                     setToggleDropdown(false);
                     signOut();
                   }}
                   className="mt-5 w-full black_btn">
-                    Sign Out
-                  </button>
-                </div>
-              )}
+                  Sign Out
+                </button>
+              </div>
+            )}
           </div>
-        ):(
+        ) : (
           <>
             {providers &&
               Object.values(providers).map((provider) =>
@@ -120,7 +120,7 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="black_btn">
-                    Sign In
+                  Sign In
                 </button>)}
           </>
         )}
