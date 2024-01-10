@@ -27,7 +27,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="font-bold text-xl orange_gradient">CSE • Insights</p>
+        <p className="max-sm:hidden font-bold text-xl orange_gradient">CSE • Insights</p>
       </Link>
 
       {/* Desktop Navigation  */}

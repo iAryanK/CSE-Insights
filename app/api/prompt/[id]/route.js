@@ -18,7 +18,7 @@ export const GET = async (request, { params }) => {
 
 // PATCH 
 export const PATCH = async (request, { params }) => {
-    const { prompt, tag } = await request.json();
+    const { title, prompt, tag } = await request.json();
 
     try {
         await connectToDB();
@@ -27,6 +27,7 @@ export const PATCH = async (request, { params }) => {
 
         if (!existingPrompt) return new Response("prompt not found", { status: 404 })
 
+        existingPrompt.title = title;
         existingPrompt.prompt = prompt;
         existingPrompt.tag = tag;
 
@@ -42,7 +43,7 @@ export const PATCH = async (request, { params }) => {
 export const DELETE = async (request, { params }) => {
     try {
         await connectToDB();
-        
+
         await Prompt.findByIdAndDelete(params.id);
         console.log('deleted');
 

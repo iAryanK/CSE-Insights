@@ -31,6 +31,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer" onClick={handleProfileClick}>
           <Image
             src={post.creator.image}
+            alt="profile picture"
             width={40}
             height={40}
             className="rounded-full object-contain" />
@@ -43,6 +44,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         <div className="copy_btn" onClick={handleCopy}>
           <Image
             src={copied === post.prompt ? '/assets/icons/tick.svg' : '/assets/icons/copy.svg'}
+            alt="copy"
             width={12}
             height={12} />
         </div>
