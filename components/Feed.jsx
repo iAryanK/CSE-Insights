@@ -28,6 +28,7 @@ const Feed = () => {
     return posts.filter(
       (item) =>
         regex.test(item.creator.username) ||
+        regex.test(item.title) ||
         regex.test(item.tag) ||
         regex.test(item.prompt)
     );

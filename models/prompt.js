@@ -5,13 +5,17 @@ const PromptSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
     },
+    title: {
+        type: String,
+        required: [true, 'Title is required.'],
+    },
     prompt: {
         type: String,
         required: [true, 'Prompt is required.'],
     },
     tag: {
         type: String,
-        requied: [true, 'Tag is requiredd.'],
+        required: [true, 'Tag is required.'],
     },
     createdAt: {
         type: Date,

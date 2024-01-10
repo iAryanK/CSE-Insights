@@ -14,6 +14,20 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism">
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
+            Title
+          </span>
+
+          <input
+            value={post.title}
+            onChange={(e) => setPost({ ...post, title: e.target.value })}
+            placeholder="Write post heading..."
+            required
+            className="form_input"
+          ></input>
+        </label>
+
+        <label>
+          <span className="font-satoshi font-semibold text-base text-gray-700">
             Your Message here
           </span>
 
@@ -44,11 +58,11 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <Link href="/" className="text-gray-500 text-sm">Cancel</Link>
 
           <button
-          type="submit"
-          disabled={submitting}
-          className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+            type="submit"
+            disabled={submitting}
+            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
           >
-            {submitting? `${type}...`:type}
+            {submitting ? `${type}...` : type}
           </button>
         </div>
       </form>
