@@ -53,20 +53,21 @@ const Feed = () => {
     setSearchedResults(searchResult);
   };
 
+  const fetchPosts = async () => {
+    const response = await fetch('/api/prompt');
+    const data = await response.json();
+
+    setPosts(data);
+  }
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch('/api/prompt', { cache: 'no-store' });
-      const data = await response.json();
-
-      setPosts(data);
-    }
-
+    console.log("useEffect");
     fetchPosts();
-  }, []);
+  }, ['/']);
 
   return (
     <section className="feed">
-      <form action="" className="relative w-full flex-center">
+      <form className="relative w-full flex-center">
         <input type="text"
           placeholder='search for a tag or a username'
           value={searchText}

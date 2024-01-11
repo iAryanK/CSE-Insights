@@ -59,13 +59,13 @@ const Nav = () => {
           <>
             {providers &&
               Object.values(providers).map((provider) =>
-                <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => signIn(provider.id)}
-                  className="black_btn">
-                  Sign In
-                </button>)}
+              (<button
+                type="button"
+                key={provider.name}
+                onClick={() => { signIn(provider.id) }}
+                className="black_btn">
+                Sign In
+              </button>))}
           </>
         )}
       </div>
@@ -80,7 +80,7 @@ const Nav = () => {
               width={37}
               height={37}
               className="rounded-full"
-              onClick={() => setToggleDropdown((prev) => !prev)}
+              onClick={() => setToggleDropdown(!toggleDropdown)}
             />
 
             {toggleDropdown && (
@@ -115,13 +115,13 @@ const Nav = () => {
           <>
             {providers &&
               Object.values(providers).map((provider) =>
-                <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => signIn(provider.id)}
-                  className="black_btn">
-                  Sign In
-                </button>)}
+              (<button
+                type="button"
+                key={provider.name}
+                onClick={() => signIn(provider.id)}
+                className="black_btn">
+                Sign In
+              </button>))}
           </>
         )}
       </div>

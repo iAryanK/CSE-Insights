@@ -5,7 +5,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
     <section className="w-full max-w-full flex-start flex-col">
       <h1 className="head_text text-left"><span className="blue_gradient">{type} Post</span></h1>
 
-      <p>
+      <p className="desc text-left max-w-md">
         {type} and share your moment of college life with the world, and share small notes, tips and tricks of subjects for others.
       </p>
 
@@ -62,7 +62,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             disabled={submitting}
             className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
           >
-            {submitting ? `${type}...` : type}
+            {submitting ? `${type}ing...` : type}
           </button>
         </div>
       </form>
