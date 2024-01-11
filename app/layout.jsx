@@ -5,6 +5,9 @@ import "@styles/globals.css"
 export const metadata = {
   title: 'CSE-Insights',
   description: 'Unlock the Power of Computer Science & Engineering • CSE Insights - Your Gateway to Practical Tips, Proven Strategies, and College stories.',
+  icons: {
+    icon: "/assets/images/logo.svg",
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -12,14 +15,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Provider>
-        <div className="main">
-            <div className="gradient"/>
-        </div>
+          <div className="main">
+            <div className="gradient" />
+          </div>
 
-        <main className="app">
-            <Nav/>
+          <main className="app">
+            <Nav />
             {children}
-        </main>
+          </main>
         </Provider>
       </body>
     </html>

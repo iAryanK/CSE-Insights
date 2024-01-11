@@ -65,13 +65,13 @@ const Feed = () => {
   useEffect(() => {
     console.log("useEffect");
     fetchPosts();
-  }, ['/']);
+  }, []);
 
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
         <input type="text"
-          placeholder='search for a tag or a username'
+          placeholder='search for content, tag or username'
           value={searchText}
           onChange={handleSearchChange}
           required
