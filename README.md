@@ -31,14 +31,14 @@ This application is inspired from the application Promptopia by the NextJS crash
 
 ## <a name="features">🔋 Features</a>
 
-In addition to the features taught by adrianhajdin, I self implemented some of the following features -
+In addition to the features taught by adrianhajdin, I self implemented some of the following features - <br />
 👉 **Duration of a post**: Users can now see how much duration it has been since the post was created.
 
 👉 **Title for each post**: A title field for each post has been added which enables the users to take a look at the post and understand what it is going to speak about.
 
 Apart from these, there are also some design and code changes that I have made to make it look more beautiful.
 
-Other features implemented are as follows -
+Other features implemented are as follows - <br />
 👉 **Discover and Share Deep CSE-Insights**: Allow users to Unlock the Power of Computer Science & Engineering • CSE Insights - A Gateway to Practical Tips, Proven Strategies, and College life stories.
 
 👉 **Edit and Delete Created Posts**: Users have the ability to edit their created posts at any time and delete them when needed.
@@ -156,6 +156,8 @@ Following are some of the concepts of NextJS -
 ➡️ NextJs API routes
 ➡️ Static and Dynamic Metadata
 ```
+
+</details>
 
 <details>
 <summary><code>Project CSE-Insights</code></summary>
